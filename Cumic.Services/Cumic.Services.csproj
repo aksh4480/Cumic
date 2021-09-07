@@ -5,11 +5,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{4BE7190E-10B8-4129-9A8D-7FF7B6EC9D7D}</ProjectGuid>
+    <ProjectGuid>{6E44297D-AC46-4640-82D5-2061846E1B29}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Cumic.Database</RootNamespace>
-    <AssemblyName>Cumic.Database</AssemblyName>
+    <RootNamespace>Cumic.Services</RootNamespace>
+    <AssemblyName>Cumic.Services</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -52,28 +52,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CategoriesService.cs" />
-    <Compile Include="CumicContext.cs" />
-    <Compile Include="Migrations\202109070543289_Initialized.cs" />
-    <Compile Include="Migrations\202109070543289_Initialized.designer.cs">
-      <DependentUpon>202109070543289_Initialized.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
+    <ProjectReference Include="..\Cumic.Database\Cumic.Database.csproj">
+      <Project>{4be7190e-10b8-4129-9a8d-7ff7b6ec9d7d}</Project>
+      <Name>Cumic.Database</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CumicEntities\CumicEntities.csproj">
-      <Project>{02231626-b6f7-4ffd-b693-746b8eaa886b}</Project>
+      <Project>{02231626-B6F7-4FFD-B693-746B8EAA886B}</Project>
       <Name>CumicEntities</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202109070543289_Initialized.resx">
-      <DependentUpon>202109070543289_Initialized.cs</DependentUpon>
-    </EmbeddedResource>
+    <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

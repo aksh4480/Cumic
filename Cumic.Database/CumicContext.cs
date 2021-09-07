@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Cumic.Database
 {
-  public class CumicContext:DbContext
+  public class CumicContext:DbContext,IDisposable
     {
         public CumicContext():base("DefaultConnection")
         {
